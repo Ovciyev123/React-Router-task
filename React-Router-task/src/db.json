@@ -1,0 +1,148 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Museum of Innocence",
+      "description": "A love story between Kemal and Füsun set in 1970s Istanbul, exploring humiliation and memory.",
+      "price": 17.99,
+      "author": "Orhan Pamuk",
+      "pagesCount": 592,
+      "publishedYear": 2008,
+      "genre": "Romance",
+      "language": "Azerbaijani",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348583229i/6282753.jpg"
+    },
+    {
+      "id": "3",
+      "title": "The Shadow of the Wind",
+      "description": "A young man’s search for the truth behind a mysterious author in post-war Barcelona.",
+      "price": 16,
+      "author": "Carlos Ruiz Zafón",
+      "pagesCount": 496,
+      "publishedYear": 2001,
+      "genre": "Historical Fiction",
+      "language": "Spanish",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1628791882i/1232.jpg"
+    },
+    {
+      "id": "4",
+      "title": "The Leopard",
+      "description": " The story portrays the decline of the aristocracy during the unification of Italy.",
+      "price": 18,
+      "author": "Giuseppe Tomasi di Lampedusa",
+      "pagesCount": 448,
+      "publishedYear": 1958,
+      "genre": "Historical Fiction",
+      "language": "Italian",
+      "image": "https://m.media-amazon.com/images/M/MV5BODNiYThjOGMtOTZlYy00Y2Q0LTk5MjQtYTRkNzU2OTA2OWQ1XkEyXkFqcGc@._V1_.jpg"
+    },
+    {
+      "id": "6",
+      "title": "The Little Prince",
+      "description": "A philosophical tale about a young prince and his adventures, questioning human nature.",
+      "price": 9.99,
+      "author": "Antoine de Saint-Exupéry",
+      "pagesCount": 96,
+      "publishedYear": 1943,
+      "genre": "Children's Fiction",
+      "language": "French",
+      "image": "https://i.harperapps.com/hcanz/covers/9780008621759/y648.jpg"
+    },
+    {
+      "id": "9",
+      "title": "Koroglu",
+      "description": "A Koroglu of Azerbaijan's ancient history and legends.",
+      "price": 19.99,
+      "author": "Alisher Navoiy",
+      "pagesCount": 510,
+      "publishedYear": 1634,
+      "genre": "History",
+      "language": "Azerbaijani",
+      "image": "https://altunkitab.az/storage/1305/conversions/koro%C4%9Flu-blade.jpg"
+    },
+    {
+      "id": "12",
+      "title": "Don Quixote",
+      "description": "A comedic and poignant story of a knight and his squire, exploring themes of reality and illusion.",
+      "price": 18,
+      "author": "Miguel de Cervantes",
+      "pagesCount": 1050,
+      "publishedYear": 1605,
+      "genre": "Adventure",
+      "language": "Spanish",
+      "image": "https://m.media-amazon.com/images/I/71mbJoazlCL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "id": "14",
+      "title": "The Alchemist",
+      "description": "A philosophical novel about pursuing your dreams and listening to your heart.",
+      "price": 13.99,
+      "author": "Paulo Coelho",
+      "pagesCount": 208,
+      "publishedYear": 1988,
+      "genre": "Adventure",
+      "language": "Portuguese",
+      "image": "https://www.pluggedin.com/wp-content/uploads/2020/01/alchemist-cover-681x1024.jpg"
+    },
+    {
+      "id": "16",
+      "title": "Pride and Prejudice",
+      "description": "A beloved classic novel that explores love, social status, and personal growth in 19th-century England.",
+      "price": 12.99,
+      "author": "Jane Austen",
+      "pagesCount": 432,
+      "publishedYear": 1813,
+      "genre": "Classic Fiction",
+      "language": "English",
+      "image": "https://m.media-amazon.com/images/M/MV5BMTA1NDQ3NTcyOTNeQTJeQWpwZ15BbWU3MDA0MzA4MzE@._V1_.jpg"
+    },
+    {
+      "id": "17",
+      "title": "Love",
+      "description": "A novel examining the lives and emotions of people caught between the worlds of East and West.",
+      "price": 12,
+      "author": "Elif Shafak",
+      "pagesCount": 432,
+      "publishedYear": 2004,
+      "genre": "Literary Fiction",
+      "language": "Turkish",
+      "image": "https://miro.medium.com/v2/resize:fit:1400/1*xFAjjNX8MGiKVf0Z_JQN4A@2x.jpeg"
+    },
+    {
+      "id": "18",
+      "title": "The Iliad",
+      "description": "Homer's epic poem about the Trojan War and the heroes that shaped Greek mythology.",
+      "price": 14.5,
+      "author": "Homer",
+      "pagesCount": 560,
+      "publishedYear": "8th century BC",
+      "genre": "Epic Poetry",
+      "language": "Spanish",
+      "image": "https://canonpress.com/cdn/shop/products/canon-classics-books-the-iliad-worldview-edition-28066901131312.jpg?v=1616167196"
+    },
+    {
+      "id": "19",
+      "title": "The Book Thief",
+      "description": "A touching narrative of a young girl's bond with books, set during World War II in Nazi Germany.",
+      "price": 15,
+      "author": "Markus Zusak",
+      "pagesCount": 560,
+      "publishedYear": 2005,
+      "genre": "Historical Fiction",
+      "language": "Italian",
+      "image": "https://m.media-amazon.com/images/I/914cHl9v7oL.jpg"
+    },
+    {
+      "id": "20",
+      "title": "The Catcher in the Rye",
+      "description": "A story about a young man navigating the challenges of adolescence and adulthood.",
+      "price": 14.99,
+      "author": "J.D. Salinger",
+      "pagesCount": 214,
+      "publishedYear": 1951,
+      "genre": "Classic Fiction",
+      "language": "English",
+      "image": "https://d3dzzbbvj9im7s.cloudfront.net/media/catalog/product/cache/ecbe52f3600ce52082655315bb63d175/1/5/158632_1.jpg"
+    }
+  ]
+}
