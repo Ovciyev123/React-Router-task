@@ -1,8 +1,48 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { useFormik } from 'formik';
+import { FavoritesContext } from '../../../Context/FavoritesContext';
+import { BasketContext } from '../../../Context/BasketContext';
 
 function Books() {
+
+  let  {favorites,setFavorites}=useContext(FavoritesContext)
+
+  let  {basket,setbasket}=useContext(BasketContext)
+
+  let[data,setdata]=useState([])
+
+  let [btncolor,setbtncolor]=useState("rgb(228, 228, 228)")
+
+
+
+
+  function Handlefavorite(book){
+    let findFavorite=favorites.find(favorite=>favorite.id==book.id)
+    if(findFavorite){
+        alert("Bu mehsul artiq favoritesde movducddur")
+    }else{
+        setFavorites([...favorites,book])
+        
+     
+    }
+
+
+}
+
+
+
+
+function Handlebasket(book){
+  let findbasket=basket.find(bookbasket=>bookbasket.id==book.id)
+  if(findbasket){
+      findbasket.count++
+      setbasket([...basket])
+  }else{
+      setbasket([...basket,{...book,count:1}])
+  }
+
+}
   
     const formik = useFormik({
       initialValues: {
@@ -23,9 +63,9 @@ function Books() {
 
     }});
 
-  let [data,setdata]=useState([])
   let [filtereddata,setfiltereddata]=useState([])
   let [sortOrder, setSortOrder] = useState('default'); 
+
   function getdata(){
     axios.get("http://localhost:3000/books")
     .then(res=>{setdata(res.data)
@@ -106,9 +146,9 @@ function Books() {
     <h5 class="card-title">PublishedYear:{book.publishedYear} year</h5>
     <h5 class="card-title">PagesCount:{book.pagesCount} page</h5>
     <p class="card-text"><b>Desc:</b>{book.description}</p>
- <div className="icon"> <a href={`/book/${book.id}`} class="btn btn-outline-primary"><i class="fa-solid fa-circle-info"></i></a>
-  <button className='btn btn-success buttonicon'><i class="fa-solid fa-heart"></i></button>
-  <button className='btn btn-outline-danger'><i  class="fa-solid fa-basket-shopping"></i> add basket</button></div>
+ <div className="icon"> <a href={`/book/${book.id}`} class="btn btn-outline-primary"><i className="fa-solid fa-circle-info"></i></a>
+  <i onClick={()=>Handlefavorite(book)} className="fa-solid haertbtn fa-heart" style={{color:btncolor}}></i>
+  <button onClick={()=>Handlebasket(book)} className='btn btn-outline-danger'><i  class="fa-solid fa-basket-shopping"></i> add basket</button></div>
   </div>
 </div>
 </div>

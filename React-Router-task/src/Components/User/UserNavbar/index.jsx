@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import Favorites from '../../../Pages/User/Favorites'
+import { FavoritesContext } from '../../../Context/FavoritesContext'
+import { BasketContext } from '../../../Context/BasketContext'
 
 
 function UserNavbar() {
 
-
+    let  {favorites,setFavorites}=useContext(FavoritesContext)
+    let {basket,setbasket}=useContext(BasketContext)
 
   return (
    <>
@@ -21,8 +25,10 @@ function UserNavbar() {
         </li>
        </ul>
        <div className="d-flex">
-       <a href="/favorites" className='btn btn-outline-success'><i class="fa-regular fa-heart"></i></a>
-       <a href="/basket" className='btn btn-outline-danger'><i  class="fa-solid fa-basket-shopping"></i></a>
+    <div className="divheart"><a href="/favorites" className='btn btn-outline-success'><i class="fa-regular fa-heart"></i></a>
+    <span>{favorites.length}</span></div>
+      <div className="divbasket"> <a href="/basket" className='btn btn-outline-danger'><i  class="fa-solid fa-basket-shopping"></i></a>
+      <span>{basket.length}</span></div>
        </div>
      
     </div>

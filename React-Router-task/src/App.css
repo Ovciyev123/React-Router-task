@@ -164,11 +164,6 @@ gap: 15px;}
 
 
 
-.icon .fa-heart{
-color: rgb(228, 224, 224);
-
-}
-
 .card-detail{width: 30%;
 margin: 30px auto;}
 
@@ -194,9 +189,6 @@ th img{
 .icon1 .btndelete{
   width: 150px;
 }
-
-
-
 
 .icon1 .btnedit{width: 150px;}
 
@@ -230,4 +222,63 @@ width: 200px;}
 
 .search h1{font-size: 20px;
   width: 300px;}
+
+.divheart{position: relative;
+width: 80px;
+height: 70px;
+padding: 0px 20px;
+
+}
+
+.divheart span{position: absolute;
+top: 0px;
+right: 3px;
+color: green;
+}
+
+.divheart a{position: absolute;
+top: 25%;
+right: 25%;}
+
+.divbasket{position: relative;
+  width: 80px;
+  height: 70px;
+  padding: 0px 20px;
+ 
+  }
+  
+  .divbasket span{position: absolute;
+  top: 0px;
+  right: 3px;
+  color: red;
+  }
+  
+  .divbasket a{position: absolute;
+  top: 25%;
+  right: 25%;}
+
+  .countbook span{margin: 0px 15px;}
+
+.basketh2{height: 50vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+.favoritesh2{height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+
+.totalprice{margin: 0px 0px 20px 90px;}
+
+
+.haertbtn{color:rgb(228, 228, 228);
+margin-top: 8px;}
+
+
+
 
