@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect } from "react";
 
-function Addbook() {
+function Editbook() {
+
+const {id}=useParams()
+
+const navigate=useNavigate()
+
+let [editdata,setteditdata]=useState({
+  title: "",
+  description: "",
+  price: "",
+  author: "",
+  publishedYear: "",
+  pagesCount: "",
+  genre: "",
+  language: "",
+  image: "",
+})
 
   const validationSchema = Yup.object({
     title: Yup.string()
@@ -12,18 +31,17 @@ function Addbook() {
     description: Yup.string()
       .required("description - required")
       .min(20, "description - min 20 hərf olmalıdır")
-      .max(50, "description - max 50 hərf ola bilər"),
+      .max(150, "description - max 150 hərf ola bilər"),
     price: Yup.number()
       .required("price - required")
-      .integer("price - integer olmalıdır")
       .min(3, "price - min 3 olmalıdır")
-      .max(100, "price - max 100 ola bilər"),
+      .max(50, "price - max 50 ola bilər"),
     author: Yup.string()
       .required("author - required")
       .min(3, "author - min 3 hərf olmalıdır")
-      .max(15, "author - max 15 hərf ola bilər"),
-    publishedYear: Yup.string().required("publishedYear - required"),
-    pagescount: Yup.string().required("publishedYear - required"),
+      .max(30, "author - max 30 hərf ola bilər"),
+    publishedYear: Yup.number().required("publishedYear - required"),
+    pagesCount: Yup.number().required("publishedYear - required"),
     genre: Yup.string()
       .required("genre - required")
       .min(3, "genre - min 3 hərf olmalıdır")
@@ -37,28 +55,39 @@ function Addbook() {
       .url("image - düzgün URL olmalıdır"),
   });
 
+  function getEditBook(id){ axios.get(`http://localhost:3000/books/${id}`)
+  .then(res=>setteditdata(res.data))
+  }
+
+  useEffect(() => {
+    if (id) {
+      getEditBook(id);
+    }
+  }, [id]);
  
-  const initialValues = {
-    title: "",
-    description: "",
-    price: "",
-    author: "",
-    publishedYear: "",
-    pagescount: "",
-    genre: "",
-    language: "",
-    image: "",
-  };
+
+   
+ 
+
+ 
+ 
 
   const onSubmit = (values) => {
-  
+    axios.put(`http://localhost:3000/books/${id}`, values)
+    .then(()=>{
+      navigate("/admin/books")
+    })
+
+   
+
   };
 
   return (
     <div className="addform">
       <h1>Book Edit</h1>
       <Formik
-        initialValues={initialValues}
+        initialValues={editdata}
+        enableReinitialize={true}
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
@@ -98,17 +127,17 @@ function Addbook() {
 
             <div className="mb-3">
               <label htmlFor="publishedYear" className="form-label">PublishedYear</label>
-              <Field name="publishedYear" type="text" className="form-control" />
+              <Field name="publishedYear" type="number" className="form-control" />
               {touched.publishedYear && errors.publishedYear && (
                 <div className="text-danger">{errors.publishedYear}</div>
               )}
             </div>
 
             <div className="mb-3">
-              <label htmlFor="pagescount" className="form-label">Pagescount</label>
-              <Field name="pagescount" type="text" className="form-control" />
-              {touched.pagescount && errors.pagescount && (
-                <div className="text-danger">{errors.pagescount}</div>
+              <label htmlFor="pagesCount" className="form-label">Pagescount</label>
+              <Field name="pagesCount" type="number" className="form-control" />
+              {touched.pagesCount && errors.pagesCount && (
+                <div className="text-danger">{errors.pagesCount}</div>
               )}
             </div>
 
@@ -136,8 +165,8 @@ function Addbook() {
                 <div className="text-danger">{errors.image}</div>
               )}
             </div>
-
-            <button type="submit" className="btn btn-primary">Add</button>
+               <button type="submit"  className="btn btn-warning">Edit</button>
+            
           </Form>
         )}
       </Formik>
@@ -145,4 +174,4 @@ function Addbook() {
   );
 }
 
-export default Addbook;
+export default Editbook;

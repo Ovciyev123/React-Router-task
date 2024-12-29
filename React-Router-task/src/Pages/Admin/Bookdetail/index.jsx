@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from "react-router-dom"
+import { data, useNavigate, useParams } from "react-router-dom"
 import Swal from 'sweetalert2'
 
 
@@ -102,7 +102,7 @@ function AdminBookdetail() {
     <h5 class="card-title">PagesCount:{data1.pagesCount} page</h5>
     <p class="card-text"><b>Desc:</b>{data1.description}</p>
     <div className="icon1">
-      <a href="/admin/editbook" class="btn btnedit btn-outline-warning">Edit</a>
+      <a href={`/admin/editbook/${data1.id}` }class="btn btnedit btn-outline-warning">Edit</a>
       <a onClick={()=>deletedata(data1.id)} class="btn btndelete btn-outline-danger">Delete</a>
 </div>
   </div>

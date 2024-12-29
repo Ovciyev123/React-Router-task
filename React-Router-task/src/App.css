@@ -162,10 +162,11 @@ gap: 15px;}
 
 .icon .btn-outline-danger{width: 150px;}
 
-.icon .btn-success{background-color:  #a2eef8 !important; }
+
 
 .icon .fa-heart{
-  color: green !important;
+color: rgb(228, 224, 224);
+
 }
 
 .card-detail{width: 30%;
@@ -193,6 +194,9 @@ th img{
 .icon1 .btndelete{
   width: 150px;
 }
+
+
+
 
 .icon1 .btnedit{width: 150px;}
 

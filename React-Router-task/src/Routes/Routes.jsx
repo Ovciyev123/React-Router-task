@@ -80,7 +80,7 @@ let ROUTES = [
                 element: <Addbook />
             },
             {
-                path: "/admin/editbook",
+                path: "/admin/editbook/:id",
                 element: <Editbook />
             }
         ]

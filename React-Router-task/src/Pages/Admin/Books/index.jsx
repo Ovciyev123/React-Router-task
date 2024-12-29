@@ -50,7 +50,7 @@ function AdminBooks() {
     <>
 
 <div className="table-div">
-<a href="/admin/addbook" className='btn btn-outline-success'>Add Book</a>
+<a href="/admin/addbook" className='btn btn-outline-success'>+ Add Book</a>
 <br /><br /><br /><br />
 
 <table class="table table-hover table-bordered table-light">
@@ -85,7 +85,7 @@ function AdminBooks() {
       <td>{book.pagesCount} page</td>
       <td>{book.description}</td>
       <td><div className="icon"> <a href={`/admin/book/${book.id}`} class="btn btn-outline-primary"><i class="fa-solid fa-circle-info"></i></a>
-      <a href="/admin/editbook" class="btn btn-outline-warning">Edit</a>
+      <a href={`/admin/editbook/${book.id}`} class="btn btn-outline-warning">Edit</a>
       <a onClick={()=>deletedata(book.id)} class="btn btn-outline-danger">Delete</a>
 </div></td>
      

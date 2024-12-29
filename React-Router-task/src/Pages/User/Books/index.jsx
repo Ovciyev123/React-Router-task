@@ -107,7 +107,7 @@ function Books() {
     <h5 class="card-title">PagesCount:{book.pagesCount} page</h5>
     <p class="card-text"><b>Desc:</b>{book.description}</p>
  <div className="icon"> <a href={`/book/${book.id}`} class="btn btn-outline-primary"><i class="fa-solid fa-circle-info"></i></a>
-  <button className='btn btn-success'><i class="fa-regular fa-heart"></i></button>
+  <button className='btn btn-success buttonicon'><i class="fa-solid fa-heart"></i></button>
   <button className='btn btn-outline-danger'><i  class="fa-solid fa-basket-shopping"></i> add basket</button></div>
   </div>
 </div>

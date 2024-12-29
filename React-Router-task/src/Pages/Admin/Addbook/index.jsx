@@ -1,8 +1,13 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Addbook() {
+
+  const navigate=useNavigate()
 
   const validationSchema = Yup.object({
     title: Yup.string()
@@ -23,8 +28,8 @@ function Addbook() {
       .required("author - required")
       .min(3, "author - min 3 hərf olmalıdır")
       .max(15, "author - max 15 hərf ola bilər"),
-    publishedYear: Yup.string().required("publishedYear - required"),
-    pagescount: Yup.string().required("publishedYear - required"),
+    publishedYear: Yup.number().required("publishedYear - required"),
+    pagesCount: Yup.number().required("publishedYear - required"),
     genre: Yup.string()
       .required("genre - required")
       .min(3, "genre - min 3 hərf olmalıdır")
@@ -39,21 +44,38 @@ function Addbook() {
   });
 
  
-  const initialValues = {
+  let initialValues = {
     title: "",
     description: "",
     price: "",
     author: "",
     publishedYear: "",
-    pagescount: "",
+    pagesCount: "",
     genre: "",
     language: "",
     image: "",
   };
 
-  const onSubmit = (values) => {
-    console.log("Form Məlumatları:", values);
+ 
+
+  const onSubmit = (values, { resetForm }) => {
+    axios.post("http://localhost:3000/books", values)
+    .then(()=>{ resetForm()
+
+      navigate('/admin/books')} 
+
+     
+    )
+
+    
+
+    
+      
   };
+
+useEffect(()=>{
+
+},[])
 
   return (
     <div className="addform">
@@ -99,17 +121,17 @@ function Addbook() {
 
             <div className="mb-3">
               <label htmlFor="publishedYear" className="form-label">PublishedYear</label>
-              <Field name="publishedYear" type="text" className="form-control" />
+              <Field name="publishedYear" type="number" className="form-control" />
               {touched.publishedYear && errors.publishedYear && (
                 <div className="text-danger">{errors.publishedYear}</div>
               )}
             </div>
 
             <div className="mb-3">
-              <label htmlFor="pagescount" className="form-label">Pagescount</label>
-              <Field name="pagescount" type="text" className="form-control" />
-              {touched.pagescount && errors.pagescount && (
-                <div className="text-danger">{errors.pagescount}</div>
+              <label htmlFor="pagesCount" className="form-label">Pagescount</label>
+              <Field name="pagesCount" type="number" className="form-control" />
+              {touched.pagesCount && errors.pagesCount && (
+                <div className="text-danger">{errors.pagesCount}</div>
               )}
             </div>
 
@@ -138,7 +160,7 @@ function Addbook() {
               )}
             </div>
 
-            <button type="submit" className="btn btn-primary">Add</button>
+         <button type="submit" className="btn btn-primary">Add</button>
           </Form>
         )}
       </Formik>
